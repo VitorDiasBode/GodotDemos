@@ -48,3 +48,4 @@ func set_pipe():
 		get_parent().pipe = null
 		set_process_input(false)
 		set_process(false)
+
