@@ -1,6 +1,6 @@
 extends Node2D
 
-var load_pipe = load("res://Pipe.tscn")
+var load_pipe = load("res://Pipe/Pipe.tscn")
 var pipe
 
 func _input(event):
