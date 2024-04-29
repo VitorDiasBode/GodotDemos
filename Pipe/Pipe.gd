@@ -1,9 +1,11 @@
 extends Node2D
 
 export var current_pipe_type:NodePath
+var is_pipe_end = true
 
 func _ready():
 	if current_pipe_type == NodePath():
+		current_pipe_type = "PipeTypes/simple_v"
 		set_pipe("none")
 	else:
 		set_pipe("")
@@ -16,3 +18,7 @@ func set_pipe(new_pipe_type:String):
 		new_pipe_type = get_node(current_pipe_type).initial_type
 	
 	$AnimatedSprite.animation = new_pipe_type
+
+func set_pipe_type():
+	current_pipe_type = "PipeTypes/"+$AnimatedSprite.animation
+

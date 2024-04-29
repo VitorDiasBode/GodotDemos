@@ -98,7 +98,7 @@ centered = false
 
 [node name="PipeTypes" type="Node2D" parent="."]
 
-[node name="SimpleV" type="Node2D" parent="PipeTypes"]
+[node name="simple_v" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
 initial_type = "simple_v"
 connections = {
@@ -108,7 +108,7 @@ connections = {
 "up": [ "simple_v", "simple_v" ]
 }
 
-[node name="SimpleH" type="Node2D" parent="PipeTypes"]
+[node name="simple_h" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
 connections = {
 "down": [ "curve_right", "simple_v" ],
