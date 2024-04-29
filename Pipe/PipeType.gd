@@ -12,14 +12,17 @@ export var connections = {
 
 func set_conection(direction:String):
 	match direction:
-		"down", "up":
-			anim.animation = "simple_v"
-			return "simple_v"
+		"down":
+			anim.animation = connections.down[0]
+			return connections.down[1]
+		"up":
+			anim.animation = connections.up[0]
+			return connections.up[1]
 		"left":
-			anim.animation = "curve_right"
-			return "simple_h"
+			anim.animation = connections.left[0]
+			return connections.left[1]
 		"right":
-			anim.animation = "curve_left"
-			return "simple_h"
+			anim.animation = connections.right[0]
+			return connections.right[1]
 	
 	return ""

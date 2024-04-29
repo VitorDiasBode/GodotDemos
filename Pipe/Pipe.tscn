@@ -101,6 +101,18 @@ centered = false
 [node name="SimpleV" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
 initial_type = "simple_v"
+connections = {
+"down": [ "simple_v", "simple_v" ],
+"left": [ "curve_right", "simple_h" ],
+"right": [ "curve_left", "simple_h" ],
+"up": [ "simple_v", "simple_v" ]
+}
 
 [node name="SimpleH" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
+connections = {
+"down": [ "curve_right", "simple_v" ],
+"left": [ "simple_h", "simple_h" ],
+"right": [ "simple_h", "simple_h" ],
+"up": [ "curve_down", "simple_v" ]
+}
