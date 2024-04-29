@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pipe02.png-229e9497d5b613b36d3d29f881dff973.stex"
+path="res://.import/Selector.png-c94fc18ee365d2a4251ab0e3cba112b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pipe/Pipe02.png"
-dest_files=[ "res://.import/Pipe02.png-229e9497d5b613b36d3d29f881dff973.stex" ]
+source_file="res://PipeCreator/Selector.png"
+dest_files=[ "res://.import/Selector.png-c94fc18ee365d2a4251ab0e3cba112b8.stex" ]
 
 [params]
 

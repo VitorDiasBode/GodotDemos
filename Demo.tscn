@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Demo.gd" type="Script" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2, 2 )
+[ext_resource path="res://PipeCreator/PipeCreator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pipe/Pipe.tscn" type="PackedScene" id=4]
 
 [node name="Demo" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="StartingPoint" type="Node2D" parent="."]
-position = Vector2( 304, 304 )
+[node name="PipeCreator" parent="." instance=ExtResource( 2 )]
 
-[node name="Area2D" type="Area2D" parent="StartingPoint" groups=["PipeEnd"]]
+[node name="Pipe" parent="." instance=ExtResource( 4 )]
+position = Vector2( 480, 320 )
+current_pipe_type = NodePath("PipeTypes/SimpleV")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartingPoint/Area2D"]
-position = Vector2( 0, 16 )
-shape = SubResource( 1 )
+[node name="Pipe2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 576, 320 )
+current_pipe_type = NodePath("PipeTypes/SimpleH")
+
+[editable path="Pipe"]
+[editable path="Pipe2"]

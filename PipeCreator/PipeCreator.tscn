@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://PipeCreator/PipeCreator.gd" type="Script" id=1]
+[ext_resource path="res://PipeCreator/Selector.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="PipeCreator" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AreaD" type="Area2D" parent="."]
+position = Vector2( 16, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaD"]
+shape = SubResource( 1 )
+
+[node name="AreaL" type="Area2D" parent="."]
+position = Vector2( -16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaL"]
+shape = SubResource( 1 )
+
+[node name="AreaU" type="Area2D" parent="."]
+position = Vector2( 16, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaU"]
+shape = SubResource( 1 )
+
+[node name="AreaR" type="Area2D" parent="."]
+position = Vector2( 48, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaR"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+centered = false
+
+[connection signal="area_entered" from="AreaD" to="." method="_on_Area2D_area_entered" binds= [ "down" ]]
+[connection signal="area_exited" from="AreaD" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="AreaL" to="." method="_on_Area2D_area_entered" binds= [ "left" ]]
+[connection signal="area_exited" from="AreaL" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="AreaU" to="." method="_on_Area2D_area_entered" binds= [ "up" ]]
+[connection signal="area_exited" from="AreaU" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="AreaR" to="." method="_on_Area2D_area_entered" binds= [ "right" ]]
+[connection signal="area_exited" from="AreaR" to="." method="_on_Area2D_area_exited"]

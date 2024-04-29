@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pipe04.png-e416ae8db94012c87ad3da64849535b7.stex"
+path="res://.import/DownCurve.png-0cda12242fa588890674ff4bd7cd5c4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pipe/Pipe04.png"
-dest_files=[ "res://.import/Pipe04.png-e416ae8db94012c87ad3da64849535b7.stex" ]
+source_file="res://PipeAssets/DownCurve.png"
+dest_files=[ "res://.import/DownCurve.png-0cda12242fa588890674ff4bd7cd5c4e.stex" ]
 
 [params]
 

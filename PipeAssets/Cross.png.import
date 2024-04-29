@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pipe03.png-9c052d5b7fda8a286533bd43f702a36f.stex"
+path="res://.import/Cross.png-457614a15d3fdc98001176d6fa662cce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pipe/Pipe03.png"
-dest_files=[ "res://.import/Pipe03.png-9c052d5b7fda8a286533bd43f702a36f.stex" ]
+source_file="res://PipeAssets/Cross.png"
+dest_files=[ "res://.import/Cross.png-457614a15d3fdc98001176d6fa662cce.stex" ]
 
 [params]
 

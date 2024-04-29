@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pipe01.png-f894e8ebead6399f8a5f3bcf419fb26d.stex"
+path="res://.import/TCrossRight.png-766dbd6883b217d8363d102bcfeb19a7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pipe/Pipe01.png"
-dest_files=[ "res://.import/Pipe01.png-f894e8ebead6399f8a5f3bcf419fb26d.stex" ]
+source_file="res://PipeAssets/TCrossRight.png"
+dest_files=[ "res://.import/TCrossRight.png-766dbd6883b217d8363d102bcfeb19a7.stex" ]
 
 [params]
 
