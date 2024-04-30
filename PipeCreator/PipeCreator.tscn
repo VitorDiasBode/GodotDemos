@@ -37,11 +37,11 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 centered = false
 
-[connection signal="area_entered" from="AreaD" to="." method="_on_Area2D_area_entered" binds= [ "down" ]]
+[connection signal="area_entered" from="AreaD" to="." method="_on_Area2D_area_entered" binds= [ "up" ]]
 [connection signal="area_exited" from="AreaD" to="." method="_on_Area2D_area_exited"]
-[connection signal="area_entered" from="AreaL" to="." method="_on_Area2D_area_entered" binds= [ "left" ]]
+[connection signal="area_entered" from="AreaL" to="." method="_on_Area2D_area_entered" binds= [ "right" ]]
 [connection signal="area_exited" from="AreaL" to="." method="_on_Area2D_area_exited"]
-[connection signal="area_entered" from="AreaU" to="." method="_on_Area2D_area_entered" binds= [ "up" ]]
+[connection signal="area_entered" from="AreaU" to="." method="_on_Area2D_area_entered" binds= [ "down" ]]
 [connection signal="area_exited" from="AreaU" to="." method="_on_Area2D_area_exited"]
-[connection signal="area_entered" from="AreaR" to="." method="_on_Area2D_area_entered" binds= [ "right" ]]
+[connection signal="area_entered" from="AreaR" to="." method="_on_Area2D_area_entered" binds= [ "left" ]]
 [connection signal="area_exited" from="AreaR" to="." method="_on_Area2D_area_exited"]

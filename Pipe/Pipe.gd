@@ -14,12 +14,9 @@ func set_connection(new_pipe_direction:String):
 
 func set_pipe(new_pipe_type:String):
 	if new_pipe_type == "":
-		new_pipe_type = get_node(current_pipe_type).initial_type
+		new_pipe_type = get_node(current_pipe_type).pipe_sprite
 	
 	$AnimatedSprite.animation = new_pipe_type
-#	Debug.d_print("current pipe type: "+current_pipe_type)
-#	Debug.d_print("current animation: "+$AnimatedSprite.animation)
-#	Debug.d_print("----------------")
 
 func set_pipe_type():
 	current_pipe_type = "PipeTypes/"+$AnimatedSprite.animation
