@@ -2,12 +2,12 @@ class_name PipeType
 extends Node2D
 
 onready var anim = $"../../AnimatedSprite"
-export var initial_type = "simple_h"
+export var pipe_sprite = ""
 export var connections = {
-	"down":["simple_v", "simple_v"],
-	"left":["simple_v", "simple_v"],
-	"up":["simple_v", "simple_v"],
-	"right":["simple_v", "simple_v"],
+	"down":["", ""],
+	"left":["", ""],
+	"up":["", ""],
+	"right":["", ""],
 }
 
 func set_conection(direction:String):

@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "PipeType",
 "language": "GDScript",
-"path": "res://Pipe/PipeType.gd"
+"path": "res://Pipe/PipeType/PipeType.gd"
 } ]
 _global_script_class_icons={
 "PipeType": ""

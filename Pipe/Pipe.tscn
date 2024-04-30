@@ -12,7 +12,7 @@
 [ext_resource path="res://PipeAssets/TCrossLeft.png" type="Texture" id=10]
 [ext_resource path="res://PipeAssets/TCrossUp.png" type="Texture" id=11]
 [ext_resource path="res://PipeAssets/TCrossDown.png" type="Texture" id=12]
-[ext_resource path="res://Pipe/PipeType.gd" type="Script" id=13]
+[ext_resource path="res://Pipe/PipeType/PipeType.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 2 )
@@ -98,21 +98,14 @@ centered = false
 
 [node name="PipeTypes" type="Node2D" parent="."]
 
-[node name="simple_v" type="Node2D" parent="PipeTypes"]
+[node name="simple_h_left" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
-initial_type = "simple_v"
-connections = {
-"down": [ "simple_v", "simple_v" ],
-"left": [ "curve_right", "simple_h" ],
-"right": [ "curve_left", "simple_h" ],
-"up": [ "simple_v", "simple_v" ]
-}
+pipe_sprite = "simple_h"
 
-[node name="simple_h" type="Node2D" parent="PipeTypes"]
+[node name="simple_h_right" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
-connections = {
-"down": [ "curve_right", "simple_v" ],
-"left": [ "simple_h", "simple_h" ],
-"right": [ "simple_h", "simple_h" ],
-"up": [ "curve_down", "simple_v" ]
-}
+pipe_sprite = "simple_h"
+
+[node name="simple_h_middle" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "simple_h"

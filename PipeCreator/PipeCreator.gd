@@ -21,26 +21,23 @@ func _input(event):
 
 func _on_Area2D_area_entered(area:Area2D, direction:String):
 	if area.is_in_group("Pipe"):
-		if area.owner.is_pipe_end:
-			nearby_pipe = area.owner
-			var new_pipe_type = nearby_pipe.set_connection(direction)
-			pipe.set_pipe(new_pipe_type)
+		nearby_pipe = area.owner
+		var new_pipe_type = nearby_pipe.set_connection(direction)
+		pipe.set_pipe(new_pipe_type)
 			
 
 func _on_Area2D_area_exited(area):
 	if area.is_in_group("Pipe"):
-		if area.owner.is_pipe_end:
-			area.owner.set_pipe("")
-			pipe.set_pipe("none")
-			nearby_pipe = null
+		area.owner.set_pipe("")
+		pipe.set_pipe("none")
+		nearby_pipe = null
 
 func create_pipe():
 	pipe = load_pipe.instance()
 	get_parent().call_deferred("add_child", pipe)
 
 func place_pipe():
-	nearby_pipe.is_pipe_end = false
-	pipe.is_pipe_end = true
+	nearby_pipe.set_pipe_type()
 	pipe.set_pipe_type()
 	pipe = null
 	create_pipe()
