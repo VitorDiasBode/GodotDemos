@@ -9,6 +9,8 @@ func _ready():
 	create_pipe()
 
 func _process(delta):
+	if is_instance_valid(pipe):
+		print(pipe.current_pipe_type)
 	global_position.x = (int(get_global_mouse_position().x / 32)) * 32
 	global_position.y = (int(get_global_mouse_position().y / 32)) * 32
 	pipe.global_position = global_position

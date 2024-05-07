@@ -4,7 +4,7 @@ export var current_pipe_type:NodePath
 
 func _ready():
 	if current_pipe_type == NodePath():
-		current_pipe_type = "PipeTypes/simple_v"
+		current_pipe_type = "PipeTypes/simple_h_left"
 		set_pipe("none")
 	else:
 		set_pipe("")

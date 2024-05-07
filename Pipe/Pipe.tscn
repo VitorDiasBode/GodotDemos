@@ -51,12 +51,32 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "simple_h",
+"name": "simple_h_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "simple_h_middle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "simple_h_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "simple_v",
+"name": "simple_v_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "simple_v_middle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "simple_v_up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
@@ -93,25 +113,157 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 3 )
-animation = "simple_v"
+animation = "simple_v_middle"
 centered = false
 
 [node name="PipeTypes" type="Node2D" parent="."]
 
 [node name="simple_h_left" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
-pipe_sprite = "simple_h"
+pipe_sprite = "simple_h_left"
 connections = {
-"down": [ "curve_down", "simple_v" ],
-"left": [ "simple_h", "simple_h" ],
-"right": [ "simple_h", "simple_h" ],
-"up": [ "curve_right", "simple_v" ]
+"down": [ "curve_down", "simple_v_down" ],
+"left": [ "simple_h_middle", "simple_h_left" ],
+"right": [ "", "none" ],
+"up": [ "curve_right", "simple_v_up" ]
 }
 
 [node name="simple_h_right" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
-pipe_sprite = "simple_h"
+pipe_sprite = "simple_h_right"
+connections = {
+"down": [ "curve_left", "simple_v_up" ],
+"left": [ "", "none" ],
+"right": [ "simple_h_middle", "simple_h_right" ],
+"up": [ "curve_up", "simple_v_up" ]
+}
 
 [node name="simple_h_middle" type="Node2D" parent="PipeTypes"]
 script = ExtResource( 13 )
-pipe_sprite = "simple_h"
+pipe_sprite = "simple_h_middle"
+connections = {
+"down": [ "t_cross_down", "simple_v_down" ],
+"left": [ "", "none" ],
+"right": [ "", "none" ],
+"up": [ "t_cross_up", "simple_v_up" ]
+}
+
+[node name="simple_v_up" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "simple_v_up"
+connections = {
+"down": [ "", "none" ],
+"left": [ "curve_left", "simple_h_left" ],
+"right": [ "curve_down", "simple_h_right" ],
+"up": [ "simple_v_middle", "simple_v_up" ]
+}
+
+[node name="simple_v_down" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "simple_v_down"
+connections = {
+"down": [ "simple_v_middle", "simple_v_down" ],
+"left": [ "curve_up", "simple_h_left" ],
+"right": [ "curve_right", "simple_h_right" ],
+"up": [ "", "none" ]
+}
+
+[node name="simple_v_middle" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "simple_v_middle"
+connections = {
+"down": [ "", "none" ],
+"left": [ "t_cross_left", "simple_h_left" ],
+"right": [ "t_cross_right", "simple_h_right" ],
+"up": [ "", "none" ]
+}
+
+[node name="curve_down" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "curve_down"
+connections = {
+"down": [ "", "none" ],
+"left": [ "t_cross_down", "simple_h_left" ],
+"right": [ "", "none" ],
+"up": [ "t_cross_right", "simple_v_up" ]
+}
+
+[node name="curve_left" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "curve_left"
+connections = {
+"down": [ "", "none" ],
+"left": [ "", "none" ],
+"right": [ "t_cross_down", "simple_h_left" ],
+"up": [ "t_cross_left", "simple_v_up" ]
+}
+
+[node name="curve_up" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "curve_up"
+connections = {
+"down": [ "t_cross_left", "simple_v_down" ],
+"left": [ "", "none" ],
+"right": [ "t_cross_up", "simple_h_right" ],
+"up": [ "", "none" ]
+}
+
+[node name="curve_right" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "curve_right"
+connections = {
+"down": [ "t_cross_right", "simple_v_down" ],
+"left": [ "t_cross_up", "simple_h_left" ],
+"right": [ "", "none" ],
+"up": [ "", "none" ]
+}
+
+[node name="t_cross_down" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "t_cross_down"
+connections = {
+"down": [ "", "none" ],
+"left": [ "", "none" ],
+"right": [ "", "none" ],
+"up": [ "cross", "simple_v_up" ]
+}
+
+[node name="t_cross_left" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "t_cross_left"
+connections = {
+"down": [ "", "none" ],
+"left": [ "", "none" ],
+"right": [ "cross", "simple_h_right" ],
+"up": [ "", "none" ]
+}
+
+[node name="t_cross_up" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "t_cross_up"
+connections = {
+"down": [ "cross", "simple_v_down" ],
+"left": [ "", "none" ],
+"right": [ "", "none" ],
+"up": [ "curve_right", "simple_v" ]
+}
+
+[node name="t_cross_right" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "t_cross_right"
+connections = {
+"down": [ "", "none" ],
+"left": [ "cross", "simple_h_left" ],
+"right": [ "", "none" ],
+"up": [ "", "none" ]
+}
+
+[node name="cross" type="Node2D" parent="PipeTypes"]
+script = ExtResource( 13 )
+pipe_sprite = "cross"
+connections = {
+"down": [ "", "none" ],
+"left": [ "", "none" ],
+"right": [ "", "none" ],
+"up": [ "", "none" ]
+}
